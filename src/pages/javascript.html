@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../js/highlight-6.2/styles/default.css">
+    <link rel="stylesheet" href="../js/highlight-6.2/styles/sunburst.css">
+    <script type="text/javascript" src="../js/highlight-6.2/highlight.pack.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            console.log("hello");
+            var result = "<script type=\"text/javascript\" src=\"jquery-1.7.2.min.js\"><\/script>";
+            $("<div></div>").text(result).appendTo("body");
+            $("<pre><code class=\"javascript\"></code></pre>").find("code").text($("#javascript").text()).appendTo("body");
+        });
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $("pre[data-code-for]").each(function (ele) {
+                var $pre = $(this);
+                var id = $pre.attr("data-code-for");
+                $("#" + id).text($pre.text());
+            });
+
+
+            hljs.tabReplace = '    ';
+            hljs.initHighlightingOnLoad();
+
+        });
+    </script>
+</head>
+<body>
+<pre class="hide" data-code-for="javascript2">
+        var print = function(msg) {
+            console.log(msg);
+            if(msg > 0){
+            }
+        }
+</pre>
+<pre>
+    <code id="javascript2" class="javascript" style="font-size:1.4em;">
+    </code>
+</pre>
+</body>
+</html>

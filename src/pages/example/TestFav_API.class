@@ -1,0 +1,79 @@
+>
+<DL>
+<DD>Enables subclasses to override the composition of the password, such as by including additional values
+ and a separator.<p>This might be used for example if a postcode/zipcode was required in addition to the
+ password. A delimiter such as a pipe (|) should be used to separate the password and extended value(s). The
+ <code>AuthenticationDao</code> will need to generate the expected password in a corresponding manner.</p>
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>request</CODE> - so that request attributes can be retrieved
+<DT><B>Returns:</B><DD>the password that will be presented in the <code>Authentication</code> request token to the
+         <code>AuthenticationManager</code></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="obtainUsername(javax.servlet.http.HttpServletRequest)"><!-- --></A><H3>
+obtainUsername</H3>
+<PRE>
+protected <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>obtainUsername</B>(javax.servlet.http.HttpServletRequest&nbsp;request)</PRE>
+<DL>
+<DD>Enables subclasses to override the composition of the username, such as by including additional values
+ and a separator.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>request</CODE> - so that request attributes can be retrieved
+<DT><B>Returns:</B><DD>the username that will be presented in the <code>Authentication</code> request token to the
+         <code>AuthenticationManager</code></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setDetails(javax.servlet.http.HttpServletRequest, org.springframework.security.authentication.UsernamePasswordAuthenticationToken)"><!-- --></A><H3>
+setDetails</H3>
+<PRE>
+protected void <B>setDetails</B>(javax.servlet.http.HttpServletRequest&nbsp;request,
+                          <A HREF="../../../../../org/springframework/security/authentication/UsernamePasswordAuthenticationToken.html" title="class in org.springframework.security.authentication">UsernamePasswordAuthenticationToken</A>&nbsp;authRequest)</PRE>
+<DL>
+<DD>Provided so that subclasses may configure what is put into the authentication request's details
+ property.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>request</CODE> - that an authentication request is being created for<DD><CODE>authRequest</CODE> - the authentication request object that should have its details set</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setUsernameParameter(java.lang.String)"><!-- --></A><H3>
+setUsernameParameter</H3>
+<PRE>
+public void <B>setUsernameParameter</B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;usernameParameter)</PRE>
+<DL>
+<DD>Sets the parameter name which will be used to obtain the username from the login request.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>usernameParameter</CODE> - the parameter name. Defaults to "j_username".</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setPasswordParameter(java.lang.String)"><!-- --></A><H3>
+setPasswordParameter</H3>
+<PRE>
+public void <B>setPasswordParameter</B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;passwordParameter)</PRE>
+<DL>
+<DD>Sets the parameter name which will be used to obtain the password from the login request..
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>passwordParameter</CODE> - the parameter name. Defaults to "j_password".</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setPostOnly(boolean)"><!-- --></A><H3>
+setPostOnly</H3>
+<PRE>
+public void <B>setPostOnly</B>(boolean&nbsp;postOnly)</PRE>
+<DL>
+<DD>Defines whether only HTTP POST requests will be allowed by this filter.
+ If set to true, and an authentication request is received which is not a POST request, an exc

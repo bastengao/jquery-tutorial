@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/webslide.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../js/highlight-6.2/styles/sunburst.css">
+    <script type="text/javascript" src="../js/highlight-6.2/highlight.pack.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+</head>
+<body>
+<div id="slide">
+    <div class="slides">
+        <section class="step slide rebuild">
+            <div style="background-color:black;color:white;margin-top:50px;">
+                <img src="../img/logo_jquery_215x53.gif" alt="" width="320" height="80">
+
+                <div data-build style="display: inline;">
+                    <span>is a new kind of JavaScript Library.</span>
+                </div>
+            </div>
+            <div data-build>
+                <p style="margin-top: 100px;font-size:1.5em;">write less, do <strong
+                        style="font-size: 1.5em;color:red;">more</strong></p>
+            </div>
+        </section>
+        <section class="step slide">
+            <h1 class="h1-header">Using/如何使用</h1>
+
+            <h2>1 step:引用jQuery</h2>
+            <pre>
+                <code id="using-jquery" class="xml">
+                </code>
+            </pre>
+            <script type="text/javascript">
+                $(function () {
+                    $("#using-jquery").text("    <script type=\"text/javascript\" src=\"js/jquery-1.7.2.min.js\"><\/script>\n<\/body>");
+                });
+            </script>
+        </section>
+        <section class="step slide">
+            <h1 class="h1-header">Using/如何使用</h1>
+
+            <h2>2 step:调用</h2>
+            <pre class="hide" data-code-for="using-jquery-2">
+    &lt;!-- 1 step --&gt;
+    &lt;script type="text/javascript" src="js/jquery-1.7.2.min.js" &gt;&lt;/script&gt;
+    &lt;!-- 2 step --&gt;
+    &lt;script type="text/javascript" &gt;
+    $(function () {
+        //所有jQuery代码都写在这里
+        alert("hello world");
+    });
+    &lt;/script&gt;
+&lt;/body&gt;</pre>
+            <pre>
+                <code id="using-jquery-2" class="xml"></code>
+            </pre>
+        </section>
+        <section class="step slide">
+            <h1 class="h1-header">Thanks</h1>
+        </section>
+    </div>
+    <div class="progress"><span></span></div>
+</div>
+<canvas id="myCanvas" width="1024" height="768">您的浏览器不支持HTML5,请升级或更换您的浏览器,强烈推荐您使用chrome浏览器。</canvas>
+<menu class="controls" id="slideCtrl">
+    <span class="tool home" onclick="location.hash='#cover'">!</span>
+    <span class="tool paint">p</span>
+    <span class="tool clearIt">d</span>
+</menu>
+<script type="text/javascript" src="../js/webslide.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("pre[data-code-for]").each(function (ele) {
+            var $pre = $(this);
+            var id = $pre.attr("data-code-for");
+            $("#" + id).text($pre.text());
+        });
+
+        hljs.tabReplace = '    ';
+        hljs.initHighlightingOnLoad();
+    });
+</script>
+</body>
+</html>
