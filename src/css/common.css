@@ -22,6 +22,18 @@
     margin-bottom: 30px;
 }
 
+.t-a-l {
+    text-align: left;
+}
+
+.t-a-r {
+    text-align: right;
+}
+
+.t-a-c {
+    text-align: center;
+}
+
 .white {
     color: white;
 }

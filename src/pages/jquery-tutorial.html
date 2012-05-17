@@ -23,7 +23,7 @@
             </div>
             <div data-build>
                 <p id="jquery-logo"
-                      style="margin-top: 100px;font-size:2em;cursor: pointer;">
+                   style="margin-top: 100px;font-size:2em;cursor: pointer;">
                     write less, do <strong style="color:black;">more</strong>
                 </p>
             </div>
@@ -54,20 +54,111 @@
             <h1 class="h1-header">Using/如何使用</h1>
 
             <h2>2 step:调用</h2>
+            <pre>
+                <code id="using-jquery-2" class="xml" style="font-size:1em;"></code>
+            </pre>
             <pre class="hide" data-code-for="using-jquery-2">
     &lt;!-- 1 step --&gt;
     &lt;script type="text/javascript" src="js/jquery-1.7.2.min.js" &gt;&lt;/script&gt;
     &lt;!-- 2 step --&gt;
     &lt;script type="text/javascript" &gt;
-    $(function () {
+    jQuery(function () {
         //所有jQuery代码都写在这里
         alert("hello world");
     });
     &lt;/script&gt;
 &lt;/body&gt;</pre>
-            <pre>
-                <code id="using-jquery-2" class="xml" style="font-size:1em;"></code>
-            </pre>
+        </section>
+        <section class="step slide">
+            <h1 class="h1-header">小例子</h1>
+            <pre><code id="little-example" class="javascript" style="font-size:1.3em;"></code></pre>
+            <p class="m-t-30 t-a-r">
+                <button id="button" style="font-size:1em;">性感的按钮</button>
+            </p>
+            <pre class="hide" data-code-for="little-example">
+jQuery(function () {
+
+    jQuery("#button").click(function () {
+        alert("你点我了");
+    });
+
+});</pre>
+            <script type="text/javascript">
+                $(function () {
+                    $("#button").click(function () {
+                        alert("你点我了");
+                    });
+                });
+            </script>
+        </section>
+        <section class="step slide rebuild">
+            <h1 class="h1-header">文档加载事件</h1>
+
+            <div data-build><h2>也可以这样写</h2></div>
+            <pre data-build><code id="jquery-document-ready" class="javascript" style="font-size:1.3em;"></code></pre>
+                <pre class="hide" data-code-for="jquery-document-ready">
+jQuery(document).ready(function () {
+    //do something
+});</pre>
+            <div data-build><h2 class="m-t-30" data-build>推荐使用</h2></div>
+            <pre data-build><code id="jquery-document-function" class="javascript"
+                                  style="font-size:1.3em;"></code></pre>
+                <pre class="hide" data-code-for="jquery-document-function">
+jQuery(function () {
+    //do something
+});</pre>
+        </section>
+        <section class="step slide">
+            <h1 class="h1-header">$ &lt;=&gt; jQuery</h1>
+
+            <h2>$和jQuery是一样的</h2>
+            <pre><code id="little-example-2" class="javascript" style="font-size:1.3em;"></code></pre>
+            <p class="m-t-30 t-a-r">
+                <button id="button-2" style="font-size:1em;">性感的按钮</button>
+            </p>
+            <pre class="hide" data-code-for="little-example-2">
+$(function () {
+
+    $("#button").click(function () {
+        alert("你又点我了");
+    });
+
+});</pre>
+            <script type="text/javascript">
+                $(function () {
+                    $("#button-2").click(function () {
+                        alert("你又点我了");
+                    });
+                });
+            </script>
+        </section>
+        <section class="step slide">
+            <h1 class="h1-header">jQuery的哲学</h1>
+
+            <ol style="list-style-type: decimal;">
+                <li style="list-style-type: decimal;">
+                    <span style="font-size:1.5em;">选择</span>
+                    <pre><code id="jquery-philosophy-first" class="javascript"></code></pre>
+                    <pre class="hide" data-code-for="jquery-philosophy-first">
+//document.getElementById("button");
+$("#button");</pre>
+                </li>
+                <li class="m-t-30" style="list-style-type: decimal;">
+                    <span style="font-size:1.5em;">调用</span>
+                    <pre><code id="jquery-philosophy-second" class="javascript"></code></pre>
+                    <pre class="hide" data-code-for="jquery-philosophy-second">
+$("#button").click(function () {
+    alert("你点我了");
+});</pre>
+                </li>
+            </ol>
+        </section>
+        <section class="step slide">
+            <h1 class="h1-header">深入jQuery,让我们一起摇滚吧</h1>
+
+            <div class="t-a-c">
+                <img src="../img/aoteman.jpg" alt="">
+            </div>
         </section>
         <section class="step slide">
             <h1 class="h1-header">Thanks</h1>
