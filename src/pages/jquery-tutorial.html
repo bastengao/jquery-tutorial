@@ -8,22 +8,33 @@
     <link rel="stylesheet" href="../js/highlight-6.2/styles/sunburst.css">
     <script type="text/javascript" src="../js/highlight-6.2/highlight.pack.js"></script>
     <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui-1.8.14.custom.min.js"></script>
 </head>
 <body>
 <div id="slide">
     <div class="slides">
         <section class="step slide rebuild">
-            <div style="background-color:black;color:white;margin-top:50px;">
-                <img src="../img/logo_jquery_215x53.gif" alt="" width="320" height="80">
+            <div style="background-color:black;color:white;margin-top:20px;padding:50px 20px;">
+                <img src="../img/logo_jquery_215x53.gif" alt="" width="430" height="106">
 
                 <div data-build style="display: inline;">
-                    <span>is a new kind of JavaScript Library.</span>
+                    <span>is a kind of JavaScript Library.</span>
                 </div>
             </div>
             <div data-build>
-                <p style="margin-top: 100px;font-size:1.5em;">write less, do <strong
-                        style="font-size: 1.5em;color:red;">more</strong></p>
+                <p id="jquery-logo"
+                      style="margin-top: 100px;font-size:2em;cursor: pointer;">
+                    write less, do <strong style="color:black;">more</strong>
+                </p>
             </div>
+
+            <script type="text/javascript">
+                $(function () {
+                    $("#jquery-logo").click(function () {
+                        $(this).children("strong").animate({color:"red", "font-size":"300%"})
+                    });
+                });
+            </script>
         </section>
         <section class="step slide">
             <h1 class="h1-header">Using/如何使用</h1>
@@ -55,7 +66,7 @@
     &lt;/script&gt;
 &lt;/body&gt;</pre>
             <pre>
-                <code id="using-jquery-2" class="xml"></code>
+                <code id="using-jquery-2" class="xml" style="font-size:1em;"></code>
             </pre>
         </section>
         <section class="step slide">
