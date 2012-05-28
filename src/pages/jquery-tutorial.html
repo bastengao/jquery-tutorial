@@ -71,18 +71,20 @@
 </section>
 <section class="step slide">
     <h1 class="h1-header">小例子</h1>
-    <pre><code id="little-example" class="javascript" style="font-size:1.3em;"></code></pre>
+    <pre><code id="little-example" class="javascript" style="font-size:1.3em;line-height: 1.2em;"></code></pre>
+    <pre><code id="little-example-html" class="html"></code></pre>
     <p class="m-t-30 t-a-r">
         <button id="button" style="font-size:1em;">性感的按钮</button>
     </p>
             <pre class="hide" data-code-for="little-example">
 jQuery(function () {
-
-    jQuery("#button").click(function () {
+    jQuery("#myButton").click(function () {
         alert("你点我了");
     });
-
 });</pre>
+    <pre class="hide" data-code-for="little-example-html">
+&lt;button id="myButton"&gt;性感的按钮&lt;/button&gt;
+    </pre>
     <script type="text/javascript">
         $(function () {
             $("#button").click(function () {
@@ -112,14 +114,14 @@ jQuery(function () {
     <h1 class="h1-header">$ &lt;=&gt; jQuery</h1>
 
     <h2>$和jQuery是一样的</h2>
-    <pre><code id="little-example-2" class="javascript" style="font-size:1.3em;"></code></pre>
+    <pre><code id="little-example-2" class="javascript" style="font-size:1.3em;line-height: 1.2em;"></code></pre>
     <p class="m-t-30 t-a-r">
         <button id="button-2" style="font-size:1em;">性感的按钮</button>
     </p>
             <pre class="hide" data-code-for="little-example-2">
 $(function () {
 
-    $("#button").click(function () {
+    $("#myButton").click(function () {
         alert("你又点我了");
     });
 
@@ -206,7 +208,7 @@ $("#my");</pre>
             <pre class="hide" data-code-for="tag-selector-js">
 $("p");</pre>
 
-    <pre><code id="tag-selector-html" class="html" style="font-size:1.8em;"></code></pre>
+    <pre><code id="tag-selector-html" class="html" style="font-size:1.5em;"></code></pre>
             <pre class="hide" data-code-for="tag-selector-html">
 &lt;p&gt;hello&lt;/p&gt;</pre>
 
@@ -220,7 +222,7 @@ $("p");</pre>
             <pre class="hide" data-code-for="class-selector-js">
 $(".myClass");</pre>
 
-    <pre><code id="class-selector-html" class="html" style="font-size:1.8em;"></code></pre>
+    <pre><code id="class-selector-html" class="html" style="font-size:1.5em;"></code></pre>
             <pre class="hide" data-code-for="class-selector-html">
 &lt;p class="myClass"&gt;hello&lt;/p&gt;</pre>
 
@@ -234,7 +236,7 @@ $(".myClass");</pre>
             <pre class="hide" data-code-for="children-selector-js">
 $("#my > a");</pre>
 
-    <pre><code id="children-selector-html" class="html" style="font-size:1.3em;"></code></pre>
+    <pre><code id="children-selector-html" class="html" style="font-size:1.5em;line-height: 1.2em;"></code></pre>
             <pre class="hide" data-code-for="children-selector-html">
 &lt;div id="my"&gt;
     &lt;a&gt;i will be selected&lt;/a&gt;
@@ -253,7 +255,7 @@ $("#my > a");</pre>
             <pre class="hide" data-code-for="descendant-selector-js">
 $("#my a");</pre>
 
-    <pre><code id="descendant-selector-html" class="html" style="font-size:1.3em;"></code></pre>
+    <pre><code id="descendant-selector-html" class="html" style="font-size:1.5em;line-height: 1.2em;"></code></pre>
             <pre class="hide" data-code-for="descendant-selector-html">
 &lt;div id="my"&gt;
     &lt;a&gt;you&lt;/a&gt;
@@ -273,6 +275,72 @@ $("#my a");</pre>
             <strong class="red" style="font-size:1.5em;" data-build>太</strong>
             多了，搞大家自己通过API挖掘吧。
         </div>
+    </div>
+</section>
+
+<section class="step slide">
+    <h1 class="h1-header">集合操作</h1>
+
+    <h2>$("button") 返回jQuery集合</h2>
+    <pre><code id="jquery-collection-js" class="javascript" style="font-size:1.3em;line-height: 1.2em;"></code></pre>
+    <pre class="hide" data-code-for="jquery-collection-js">
+$("button").each(function () {
+    $(this).click(function () {
+        alert($(this).text());
+    });
+});</pre>
+    <pre><code id="jquery-collection-html" class="html"></code></pre>
+    <pre class="hide" data-code-for="jquery-collection-html">
+&lt;button&gt;111&lt;/button&gt;
+&lt;button&gt;222&lt;/button&gt;
+&lt;button&gt;333&lt;/button&gt;</pre>
+    <div id="jquery-collection-buttons" class="t-a-r">
+        <button style="font-size:1em;">111</button>
+        <button style="font-size:1em;">222</button>
+        <button style="font-size:1em;">333</button>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $("#jquery-collection-buttons button").each(function () {
+                $(this).click(function () {
+                    alert($(this).text());
+                });
+            });
+        });
+    </script>
+</section>
+<section class="step slide">
+    <h1 class="h1-header"><strong class="red">神奇</strong>集合操作</h1>
+
+    <h2>$("button") 返回jQuery集合</h2>
+    <pre><code id="jquery-collection-js-2" class="javascript" style="font-size:1.3em;line-height: 1.2em;"></code></pre>
+    <pre class="hide" data-code-for="jquery-collection-js-2">
+$("button").click(function () {
+    alert($(this).text());
+});</pre>
+    <pre><code id="jquery-collection-html-2" class="html"></code></pre>
+    <pre class="hide" data-code-for="jquery-collection-html-2">
+&lt;button&gt;111&lt;/button&gt;
+&lt;button&gt;222&lt;/button&gt;
+&lt;button&gt;333&lt;/button&gt;</pre>
+    <div id="jquery-collection-buttons-2" class="t-a-r">
+        <button style="font-size:1em;">111</button>
+        <button style="font-size:1em;">222</button>
+        <button style="font-size:1em;">333</button>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $("#jquery-collection-buttons-2 button").click(function () {
+                alert($(this).text());
+            });
+        });
+    </script>
+</section>
+<section class="step slide rebuild">
+    <h1 class="h1-header">选择之后，我们该做什么了？</h1>
+
+    <div data-build>
+        <h2 style="font-size:1.8em;" data-build>调用方法</h2>
     </div>
 </section>
 <section class="step slide">
