@@ -405,7 +405,39 @@ $("#my").removeClass("good");</pre>
     </ul>
 </section>
 <section class="step slide">
+    <h1 class="h1-header">属性/text</h1>
+    <pre><code id="jquery-api-text-get-js" class="javascript" style="font-size:1.8em;"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-text-get-js">
+var text = $("p").text();</pre>
+    <pre><code id="jquery-api-text-get-html" class="html" style="font-size:1.8em;"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-text-get-html">
+&lt;p&gt;i am text&lt;/p&gt;</pre>
+    <div class="m-t-30 t-a-r">
+        <p id="jquery-api-text-get-html-example-p">i am text</p>
+        <button id="jquery-api-text-get-html-example-button" style="font-size:1em;">alert text</button>
+        <script type="text/javascript">
+            $(function () {
+                $("#jquery-api-text-get-html-example-button").click(function () {
+                    var text = $("#jquery-api-text-get-html-example-p").text();
+                    alert(text);
+                });
+            });
+        </script>
+    </div>
+</section>
+<section class="step slide">
     <h1 class="h1-header">文档处理</h1>
+</section>
+<section class="step slide">
+    <h1 class="h1-header">编码风格</h1>
+    <ul>
+        <li><span>jQuery对象用 "$xxx" 表示</span>
+            <pre><code id="jquery-guide-naming-jquery-object" class="javascript"></code></pre>
+            <pre class="hide" data-code-for="jquery-guide-naming-jquery-object">
+var str = "hello";
+var $button = $("#button");</pre>
+        </li>
+    </ul>
 </section>
 <section class="step slide">
     <h1 class="h1-header">Thanks</h1>
@@ -422,6 +454,7 @@ $("#my").removeClass("good");</pre>
 <script type="text/javascript" src="../js/webslide.js"></script>
 <script type="text/javascript">
     $(function () {
+        //将 pre 中的代码，放到 data-code-for 对应的 id 的元素中
         $("pre[data-code-for]").each(function (ele) {
             var $pre = $(this);
             var id = $pre.attr("data-code-for");
