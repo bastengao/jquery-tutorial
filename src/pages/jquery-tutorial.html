@@ -437,6 +437,15 @@ var text = $("p").text();</pre>
 var str = "hello";
 var $button = $("#button");</pre>
         </li>
+        <li><span>this 并不是 jQuery 对象</span>
+            <pre><code id="jquery-guide-this-reference" class="javascript"></code></pre>
+            <pre class="hide" data-code-for="jquery-guide-this-reference">
+$("#button").click(function(){
+    //this is not jQuery object
+    //$this is jQuery object
+    var $this = $(this);
+});</pre>
+        </li>
     </ul>
 </section>
 <section class="step slide">
