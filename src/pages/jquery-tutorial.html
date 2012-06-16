@@ -449,12 +449,12 @@ $("p").append("&lt;a&gt;李四&lt;/a&gt;");</pre>
     <span>result</span>
     <pre><code id="jquery-api-append-html-2" class="html"></code></pre>
     <pre class="hide" data-code-for="jquery-api-append-html-2">
-&lt;table&gt;
+&lt;p&gt;
     &lt;a&gt;张三&lt;/a&gt;
     &lt;a&gt;李四&lt;/a&gt;
-&lt;/table&gt;</pre>
+&lt;/p&gt;</pre>
 </section>
-<section id="dom" class="step slide">
+<section class="step slide">
     <h1 class="h1-header">文档处理</h1>
 
     <h2>内部插入</h2>
@@ -473,6 +473,22 @@ $("p").prepend("&lt;a&gt;王二&lt;/a&gt;");</pre>
     &lt;a&gt;王二&lt;/a&gt;
     &lt;a&gt;张三&lt;/a&gt;
 &lt;/table&gt;</pre>
+</section>
+<section id="dom" class="step slide">
+    <h1 class="h1-header">文档处理</h1>
+
+    <h2>外部插入</h2>
+    <pre><code id="jquery-api-after-js" class="javascript"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-after-js">
+$("p").after("&lt;p&gt;李四&lt;/p&gt;");</pre>
+    <pre><code id="jquery-api-after-html" class="html"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-after-html">
+&lt;p&gt;张三&lt;/p&gt;
+</pre>
+    <span>result</span>
+    <pre><code id="jquery-api-after-html-2" class="html"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-after-html-2">
+&lt;p&gt;张三&lt;/p&gt;&lt;p&gt;李四&lt;/p&gt;</pre>
 </section>
 <section class="step slide">
     <h1 class="h1-header">事件</h1>
