@@ -474,7 +474,7 @@ $("p").prepend("&lt;a&gt;王二&lt;/a&gt;");</pre>
     &lt;a&gt;张三&lt;/a&gt;
 &lt;/table&gt;</pre>
 </section>
-<section id="dom" class="step slide">
+<section class="step slide">
     <h1 class="h1-header">文档处理</h1>
 
     <h2>外部插入</h2>
@@ -489,6 +489,37 @@ $("p").after("&lt;p&gt;李四&lt;/p&gt;");</pre>
     <pre><code id="jquery-api-after-html-2" class="html"></code></pre>
     <pre class="hide" data-code-for="jquery-api-after-html-2">
 &lt;p&gt;张三&lt;/p&gt;&lt;p&gt;李四&lt;/p&gt;</pre>
+</section>
+<section id="dom" class="step slide">
+    <h1 class="h1-header">文档处理</h1>
+
+    <h2>外部插入</h2>
+    <pre><code id="jquery-api-before-js" class="javascript"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-before-js">
+$("p").before("&lt;p&gt;王二&lt;/p&gt;");</pre>
+    <pre><code id="jquery-api-before-html" class="html"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-before-html">
+&lt;p&gt;张三&lt;/p&gt;
+</pre>
+    <span>result</span>
+    <pre><code id="jquery-api-before-html-2" class="html"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-before-html-2">
+&lt;p&gt;王二&lt;/p&gt;&lt;p&gt;张三&lt;/p&gt;</pre>
+</section>
+<section id="dom-empty" class="step slide">
+    <h1 class="h1-header">文档处理</h1>
+
+    <h2>删除</h2>
+    <pre><code id="jquery-api-empty-js" class="javascript"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-empty-js">
+$("p").empty();</pre>
+    <pre><code id="jquery-api-empty-html" class="html"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-empty-html">
+&lt;p&gt;还想再活五百年&lt;/p&gt;</pre>
+    <span>result</span>
+    <pre><code id="jquery-api-empty-html-2" class="html"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-empty-html-2">
+&lt;p&gt;&lt;/p&gt;</pre>
 </section>
 <section class="step slide">
     <h1 class="h1-header">事件</h1>
