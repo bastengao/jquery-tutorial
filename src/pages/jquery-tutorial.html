@@ -434,21 +434,25 @@ var text = $("p").text();</pre>
         <li>删除</li>
     </ul>
 </section>
-<section class="step slide">
+<section id="dom" class="step slide">
     <h1 class="h1-header">文档处理</h1>
 
     <h2>内部插入</h2>
     <pre><code id="jquery-api-append-js" class="javascript"></code></pre>
     <pre class="hide" data-code-for="jquery-api-append-js">
-$("tbody").append("<tr></tr>");
-    </pre>
+$("p").append("&lt;a&gt;李四&lt;/a&gt;");</pre>
     <pre><code id="jquery-api-append-html" class="html"></code></pre>
     <pre class="hide" data-code-for="jquery-api-append-html">
+&lt;p&gt;
+    &lt;a&gt;张三&lt;/a&gt;
+&lt;/p&gt;</pre>
+    <span>result</span>
+    <pre><code id="jquery-api-append-html-2" class="html"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-append-html-2">
 &lt;table&gt;
-    &lt;tbody&gt;
-    &lt;/tbody&gt;
-&lt;/table&gt;
-    </pre>
+    &lt;a&gt;张三&lt;/a&gt;
+    &lt;a&gt;李四&lt;/a&gt;
+&lt;/table&gt;</pre>
 </section>
 <section class="step slide">
     <h1 class="h1-header">事件</h1>
