@@ -404,7 +404,7 @@ $("#my").removeClass("good");</pre>
         </li>
     </ul>
 </section>
-<section class="step slide">
+<section id="attribute-text" class="step slide">
     <h1 class="h1-header">属性/text</h1>
     <pre><code id="jquery-api-text-get-js" class="javascript" style="font-size:1.8em;"></code></pre>
     <pre class="hide" data-code-for="jquery-api-text-get-js">
@@ -424,6 +424,31 @@ var text = $("p").text();</pre>
             });
         </script>
     </div>
+</section>
+<section id="attribute-value" class="step slide">
+    <h1 class="h1-header">属性/value</h1>
+    <pre><code id="jquery-api-value-js" class="javascript" style="font-size:1.3em;line-height: 1.2em;"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-value-js">
+$("input").val("初始值");
+$("button").click(function () {
+    alert($("input").val());
+});</pre>
+    <pre><code id="jquery-api-value-html" class="html"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-value-html">
+&lt;input type="text"&gt;    &lt;button&gt;val&lt;/button&gt;</pre>
+    <div class="t-a-r">
+        <input id="jquery-api-value-html-example-input" type="text">
+        <button id="jquery-api-value-html-example-button">val</button>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            var $input = $("#jquery-api-value-html-example-input");
+            $input.val("初始值");
+            $("#jquery-api-value-html-example-button").click(function () {
+                alert($input.val());
+            });
+        });
+    </script>
 </section>
 <section class="step slide">
     <h1 class="h1-header">文档处理</h1>
