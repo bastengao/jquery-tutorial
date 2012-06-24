@@ -1,0 +1,72 @@
+.m-t-10 {
+    margin-top: 10px;
+}
+
+.m-t-20 {
+    margin-top: 20px;
+}
+
+.m-t-30 {
+    margin-top: 30px;
+}
+
+.m-t-50 {
+    margin-top: 50px;
+}
+
+.m-t-100 {
+    margin-top: 100px;
+}
+
+.m-b-10 {
+    margin-bottom: 10px;
+}
+
+.m-b-20 {
+    margin-bottom: 20px;
+}
+
+.m-b-30 {
+    margin-bottom: 30px;
+}
+
+.t-a-l {
+    text-align: left;
+}
+
+.t-a-r {
+    text-align: right;
+}
+
+.t-a-c {
+    text-align: center;
+}
+
+.white {
+    color: white;
+}
+
+.black {
+    color: black;
+}
+
+.blue {
+    color: blue;
+}
+
+.light-blue {
+    color: #5DB0E6;
+}
+
+.red {
+    color: red;
+}
+
+.hide {
+    display: none;
+}
+
+h1.h1-header {
+    margin: 10px 0 50px 0;
+    font-size: 2em;
+}

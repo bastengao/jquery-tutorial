@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>jquery tutorial</title>
+    <link rel="stylesheet" href="../css/webslide.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../js/highlight-6.2/styles/sunburst.css">
+    <script type="text/javascript" src="../js/highlight-6.2/highlight.pack.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui-1.8.14.custom.min.js"></script>
+</head>
+<body>
+<div id="slide">
+<div class="slides">
+<section class="step slide rebuild">
+    <div style="background-color:black;color:white;margin-top:20px;padding:50px 20px;">
+        <img src="../img/logo_jquery_215x53.gif" alt="" width="430" height="106">
+
+        <div data-build style="display: inline;">
+            <span>is a kind of JavaScript Library.</span>
+        </div>
+    </div>
+    <div data-build>
+        <p id="jquery-logo"
+           style="margin-top: 100px;font-size:2em;cursor: pointer;">
+            write less, do <strong style="color:black;">more</strong>
+        </p>
+    </div>
+
+    <script type="text/javascript">
+        $(function () {
+            $("#jquery-logo").click(function () {
+                $(this).children("strong").animate({color:"red", "font-size":"300%"})
+            });
+        });
+    </script>
+</section>
+<section class="step slide">
+    <h1 class="h1-header">Using/如何使用</h1>
+
+    <h2>1 step:引用jQuery</h2>
+            <pre>
+                <code id="using-jquery" class="xml">
+                </code>
+            </pre>
+    <script type="text/javascript">
+        $(function () {
+            $("#using-jquery").text("    <script type=\"text/javascript\" src=\"js/jquery-1.7.2.min.js\"><\/script>\n<\/body>");
+        });
+    </script>
+</section>
+<section class="step slide">
+    <h1 class="h1-header">Using/如何使用</h1>
+
+    <h2>2 step:调用</h2>
+            <pre>
+                <code id="using-jquery-2" class="xml" style="font-size:1em;"></code>
+            </pre>
+            <pre class="hide" data-code-for="using-jquery-2">
+    &lt;!-- 1 step --&gt;
+    &lt;script type="text/javascript" src="js/jquery-1.7.2.min.js" &gt;&lt;/script&gt;
+    &lt;!-- 2 step --&gt;
+    &lt;script type="text/javascript" &gt;
+    jQuery(function () {
+        //所有jQuery代码都写在这里
+        alert("hello world");
+    });
+    &lt;/script&gt;
+&lt;/body&gt;</pre>
+</section>
+<section class="step slide">
+    <h1 class="h1-header">小例子</h1>
+    <pre><code id="little-example" class="javascript" style="font-size:1.3em;line-height: 1.2em;"></code></pre>
+    <pre><code id="little-example-html" class="html"></code></pre>
+    <p class="m-t-30 t-a-r">
+        <button id="button" style="font-size:1em;">性感的按钮</button>
+    </p>
+            <pre class="hide" data-code-for="little-example">
+jQuery(function () {
+    jQuery("#myButton").click(function () {
+        alert("你点我了");
+    });
+});</pre>
+    <pre class="hide" data-code-for="little-example-html">
+&lt;button id="myButton"&gt;性感的按钮&lt;/button&gt;
+    </pre>
+    <script type="text/javascript">
+        $(function () {
+            $("#button").click(function () {
+                alert("你点我了");
+            });
+        });
+    </script>
+</section>
+<section class="step slide rebuild">
+    <h1 class="h1-header">文档加载事件</h1>
+
+    <div data-build><h2>也可以这样写</h2></div>
+    <pre data-build><code id="jquery-document-ready" class="javascript" style="font-size:1.3em;"></code></pre>
+                <pre class="hide" data-code-for="jquery-document-ready">
+jQuery(document).ready(function () {
+    //do something
+});</pre>
+    <div data-build><h2 class="m-t-30" data-build>我喜欢</h2></div>
+            <pre data-build><code id="jquery-document-function" class="javascript"
+                                  style="font-size:1.3em;"></code></pre>
+                <pre class="hide" data-code-for="jquery-document-function">
+jQuery(function () {
+    //do something
+});</pre>
+</section>
+<section class="step slide">
+    <h1 class="h1-header">$ &lt;=&gt; jQuery</h1>
+
+    <h2>$和jQuery是一样的</h2>
+    <pre><code id="little-example-2" class="javascript" style="font-size:1.3em;line-height: 1.2em;"></code></pre>
+    <p class="m-t-30 t-a-r">
+        <button id="button-2" style="font-size:1em;">性感的按钮</button>
+    </p>
+            <pre class="hide" data-code-for="little-example-2">
+$(function () {
+
+    $("#myButton").click(function () {
+        alert("你又点我了");
+    });
+
+});</pre>
+    <script type="text/javascript">
+        $(function () {
+            $("#button-2").click(function () {
+                alert("你又点我了");
+            });
+        });
+    </script>
+</section>
+<section class="step slide">
+    <h1 class="h1-header">jQuery的哲学</h1>
+
+    <ol style="list-style-type: decimal;">
+        <li style="list-style-type: decimal;">
+            <span style="font-size:1.5em;">选择</span>
+            <pre><code id="jquery-philosophy-first" class="javascript"></code></pre>
+                    <pre class="hide" data-code-for="jquery-philosophy-first">
+//document.getElementById("button");
+$("#button");</pre>
+        </li>
+        <li class="m-t-30" style="list-style-type: decimal;">
+            <span style="font-size:1.5em;">调用</span>
+            <pre><code id="jquery-philosophy-second" class="javascript"></code></pre>
+                    <pre class="hide" data-code-for="jquery-philosophy-second">
+$("#button").click(function () {
+    alert("你点我了");
+});</pre>
+        </li>
+    </ol>
+</section>
+<section class="step slide">
+    <h1 class="h1-header">深入jQuery,让我们一起摇滚吧</h1>
+
+    <div class="t-a-c">
+        <img src="../img/aoteman.jpg">
+    </div>
+</section>
+<section class="step slide">
+    <h1 class="h1-header">selector/选择器</h1>
+
+    <h2>与 css 选择器语法<strong class="red" style="font-size:150%;">几乎</strong>一样</h2>
+
+    <ul class="m-t-30">
+        <li>
+            <span>id选择器</span>
+
+            <div>#id</div>
+        </li>
+        <li class="m-t-20">
+            <span>标签选择器</span>
+
+            <div>tagName</div>
+        </li>
+        <li class="m-t-20">
+            <span>类选择器</span>
+
+            <div>.className</div>
+        </li>
+    </ul>
+</section>
+<section class="step slide">
+    <h1 class="h1-header">selector/选择器</h1>
+
+    <h2>id选择器</h2>
+
+    <pre><code id="id-selector-js" class="javascript" style="font-size:1.8em;"></code></pre>
+            <pre class="hide" data-code-for="id-selector-js">
+$("#my");</pre>
+
+    <pre><code id="id-selector-html" class="html" style="font-size:1.8em;"></code></pre>
+            <pre class="hide" data-code-for="id-selector-html">
+&lt;p id="my"&gt;hello&lt;/p&gt;</pre>
+
+</section>
+<section class="step slide">
+    <h1 class="h1-header">selector/选择器</h1>
+
+    <h2>标签选择器</h2>
+
+    <pre><code id="tag-selector-js" class="javascript" style="font-size:1.8em;"></code></pre>
+            <pre class="hide" data-code-for="tag-selector-js">
+$("p");</pre>
+
+    <pre><code id="tag-selector-html" class="html" style="font-size:1.5em;"></code></pre>
+            <pre class="hide" data-code-for="tag-selector-html">
+&lt;p&gt;hello&lt;/p&gt;</pre>
+
+</section>
+<section class="step slide">
+    <h1 class="h1-header">selector/选择器</h1>
+
+    <h2>类选择器</h2>
+
+    <pre><code id="class-selector-js" class="javascript" style="font-size:1.8em;"></code></pre>
+            <pre class="hide" data-code-for="class-selector-js">
+$(".myClass");</pre>
+
+    <pre><code id="class-selector-html" class="html" style="font-size:1.5em;"></code></pre>
+            <pre class="hide" data-code-for="class-selector-html">
+&lt;p class="myClass"&gt;hello&lt;/p&gt;</pre>
+
+</section>
+<section class="step slide">
+    <h1 class="h1-header">selector/选择器</h1>
+
+    <h2>直接孩子</h2>
+
+    <pre><code id="children-selector-js" class="javascript" style="font-size:1.8em;"></code></pre>
+            <pre class="hide" data-code-for="children-selector-js">
+$("#my > a");</pre>
+
+    <pre><code id="children-selector-html" class="html" style="font-size:1.5em;line-height: 1.2em;"></code></pre>
+            <pre class="hide" data-code-for="children-selector-html">
+&lt;div id="my"&gt;
+    &lt;a&gt;i will be selected&lt;/a&gt;
+    &lt;div&gt;
+        &lt;a&gt;but me&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+</section>
+<section class="step slide">
+    <h1 class="h1-header">selector/选择器</h1>
+
+    <h2>后代（孩子的孩子的...）</h2>
+
+    <pre><code id="descendant-selector-js" class="javascript" style="font-size:1.8em;"></code></pre>
+            <pre class="hide" data-code-for="descendant-selector-js">
+$("#my a");</pre>
+
+    <pre><code id="descendant-selector-html" class="html" style="font-size:1.5em;line-height: 1.2em;"></code></pre>
+            <pre class="hide" data-code-for="descendant-selector-html">
+&lt;div id="my"&gt;
+    &lt;a&gt;you&lt;/a&gt;
+    &lt;div&gt;
+        &lt;a&gt;and me&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+</section>
+<section class="step slide rebuild">
+    <h1 class="h1-header">selector/选择器</h1>
+
+    <h2>其他选择器</h2>
+
+    <div data-build>
+        <div class="m-t-30" style="font-size:1.2em;">
+            <strong class="red" style="font-size:1.5em;" data-build>太</strong>
+            多了，搞大家自己通过API挖掘吧。
+        </div>
+    </div>
+</section>
+
+<section class="step slide">
+    <h1 class="h1-header">集合操作</h1>
+
+    <h2>$("button") 返回jQuery集合</h2>
+    <pre><code id="jquery-collection-js" class="javascript" style="font-size:1.3em;line-height: 1.2em;"></code></pre>
+    <pre class="hide" data-code-for="jquery-collection-js">
+$("button").each(function () {
+    $(this).click(function () {
+        alert($(this).text());
+    });
+});</pre>
+    <pre><code id="jquery-collection-html" class="html"></code></pre>
+    <pre class="hide" data-code-for="jquery-collection-html">
+&lt;button&gt;111&lt;/button&gt;
+&lt;button&gt;222&lt;/button&gt;
+&lt;button&gt;333&lt;/button&gt;</pre>
+    <div id="jquery-collection-buttons" class="m-t-20 t-a-r">
+        <button style="font-size:1em;">111</button>
+        <button style="font-size:1em;">222</button>
+        <button style="font-size:1em;">333</button>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $("#jquery-collection-buttons button").each(function () {
+                $(this).click(function () {
+                    alert($(this).text());
+                });
+            });
+        });
+    </script>
+</section>
+<section class="step slide">
+    <h1 class="h1-header"><strong class="red">神奇</strong>的集合操作</h1>
+
+    <h2>$("button") 返回jQuery集合</h2>
+    <pre><code id="jquery-collection-js-2" class="javascript" style="font-size:1.3em;line-height: 1.2em;"></code></pre>
+    <pre class="hide" data-code-for="jquery-collection-js-2">
+$("button").click(function () {
+    alert($(this).text());
+});</pre>
+    <pre><code id="jquery-collection-html-2" class="html"></code></pre>
+    <pre class="hide" data-code-for="jquery-collection-html-2">
+&lt;button&gt;111&lt;/button&gt;
+&lt;button&gt;222&lt;/button&gt;
+&lt;button&gt;333&lt;/button&gt;</pre>
+    <div id="jquery-collection-buttons-2" class="m-t-20 t-a-r">
+        <button style="font-size:1em;">111</button>
+        <button style="font-size:1em;">222</button>
+        <button style="font-size:1em;">333</button>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $("#jquery-collection-buttons-2 button").click(function () {
+                alert($(this).text());
+            });
+        });
+    </script>
+</section>
+<section class="step slide rebuild">
+    <h1 class="h1-header">选择之后，我们该做什么了？</h1>
+
+    <div data-build>
+        <h2 style="font-size:1.8em;" data-build>没错，该调用方法</h2>
+    </div>
+</section>
+<section class="step slide">
+    <h1 class="h1-header">属性</h1>
+    <ul>
+        <li>
+            <span>获取属性</span>
+            <pre><code id="jquery-api-attr-get-js" class="javascript"></code></pre>
+            <pre class="hide" data-code-for="jquery-api-attr-get-js">
+var href = $("a").attr("href");</pre>
+            <pre><code id="jquery-api-attr-get-html" class="html"></code></pre>
+            <pre class="hide" data-code-for="jquery-api-attr-get-html">
+&lt;a href="http://jquery.com"&gt;jQuery&lt;/a&gt;</pre>
+        </li>
+        <li class="m-t-30">
+            <span>设置属性</span>
+            <pre><code id="jquery-api-attr-set-js" class="javascript"></code></pre>
+            <pre class="hide" data-code-for="jquery-api-attr-set-js">
+$("img").attr("src", "big.png");</pre>
+            <pre><code id="jquery-api-attr-set-html" class="html"></code></pre>
+            <pre class="hide" data-code-for="jquery-api-attr-set-html">
+&lt;img src="small.png"&gt;</pre>
+            <pre class="m-t-10"><code id="jquery-api-attr-set-html-2" class="html"></code></pre>
+            <pre class="hide" data-code-for="jquery-api-attr-set-html-2">
+&lt;img src="big.png"&gt;</pre>
+        </li>
+    </ul>
+</section>
+<section class="step slide">
+    <h1 class="h1-header">属性/class</h1>
+    <ul>
+        <li>
+            <span>addClass</span>
+            <pre><code id="jquery-api-add-class-js" class="javascript"></code></pre>
+            <pre class="hide" data-code-for="jquery-api-add-class-js">
+$("#my").addClass("good");</pre>
+            <pre><code id="jquery-api-add-class-html" class="html"></code></pre>
+            <pre class="hide" data-code-for="jquery-api-add-class-html">
+&lt;p id="my"&gt;hello&lt;/p&gt;</pre>
+            <div class="m-t-20 m-b-20">result</div>
+            <pre><code id="jquery-api-add-class-html-2" class="html"></code></pre>
+            <pre class="hide" data-code-for="jquery-api-add-class-html-2">
+&lt;p id="my" class="good"&gt;hello&lt;/p&gt;</pre>
+        </li>
+    </ul>
+</section>
+<section class="step slide">
+    <h1 class="h1-header">属性/class</h1>
+    <ul>
+        <li><span>removeClass</span>
+            <pre><code id="jquery-api-remove-class-js" class="javascript"></code></pre>
+            <pre class="hide" data-code-for="jquery-api-remove-class-js">
+$("#my").removeClass("good");</pre>
+            <pre><code id="jquery-api-remove-class-html" class="html"></code></pre>
+            <pre class="hide" data-code-for="jquery-api-remove-class-html">
+&lt;p id="my" class="good bad"&gt;hello&lt;/p&gt;</pre>
+            <div class="m-t-20 m-b-20">result</div>
+            <pre><code id="jquery-api-remove-class-html-2" class="html"></code></pre>
+            <pre class="hide" data-code-for="jquery-api-remove-class-html-2">
+&lt;p id="my" class="bad"&gt;hello&lt;/p&gt;</pre>
+        </li>
+    </ul>
+</section>
+<section id="attribute-text" class="step slide">
+    <h1 class="h1-header">属性/text</h1>
+    <pre><code id="jquery-api-text-get-js" class="javascript" style="font-size:1.8em;"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-text-get-js">
+var text = $("p").text();</pre>
+    <pre><code id="jquery-api-text-get-html" class="html" style="font-size:1.8em;"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-text-get-html">
+&lt;p&gt;i am text&lt;/p&gt;</pre>
+    <div class="m-t-30 t-a-r">
+        <p id="jquery-api-text-get-html-example-p">i am text</p>
+        <button id="jquery-api-text-get-html-example-button" style="font-size:1em;">alert text</button>
+        <script type="text/javascript">
+            $(function () {
+                $("#jquery-api-text-get-html-example-button").click(function () {
+                    var text = $("#jquery-api-text-get-html-example-p").text();
+                    alert(text);
+                });
+            });
+        </script>
+    </div>
+</section>
+<section id="attribute-value" class="step slide">
+    <h1 class="h1-header">属性/value</h1>
+    <pre><code id="jquery-api-value-js" class="javascript" style="font-size:1.3em;line-height: 1.2em;"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-value-js">
+$("input").val("初始值");
+$("button").click(function () {
+    alert($("input").val());
+});</pre>
+    <pre><code id="jquery-api-value-html" class="html"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-value-html">
+&lt;input type="text"&gt;    &lt;button&gt;val&lt;/button&gt;</pre>
+    <div class="t-a-r m-t-30">
+        <input id="jquery-api-value-html-example-input" type="text">
+        <button id="jquery-api-value-html-example-button">val</button>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            var $input = $("#jquery-api-value-html-example-input");
+            $input.val("初始值");
+            $("#jquery-api-value-html-example-button").click(function () {
+                alert($input.val());
+            });
+        });
+    </script>
+</section>
+<section class="step slide">
+    <h1 class="h1-header">文档处理</h1>
+
+    <ul>
+        <li>内部插入</li>
+        <li>外部插入</li>
+        <li>删除</li>
+    </ul>
+</section>
+<section class="step slide">
+    <h1 class="h1-header">文档处理</h1>
+
+    <h2>内部插入/append</h2>
+    <pre><code id="jquery-api-append-js" class="javascript"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-append-js">
+$("p").append("&lt;a&gt;李四&lt;/a&gt;");</pre>
+    <pre><code id="jquery-api-append-html" class="html"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-append-html">
+&lt;p&gt;
+    &lt;a&gt;张三&lt;/a&gt;
+&lt;/p&gt;</pre>
+    <span>result</span>
+    <pre><code id="jquery-api-append-html-2" class="html"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-append-html-2">
+&lt;p&gt;
+    &lt;a&gt;张三&lt;/a&gt;
+    &lt;a&gt;李四&lt;/a&gt;
+&lt;/p&gt;</pre>
+</section>
+<section class="step slide">
+    <h1 class="h1-header">文档处理</h1>
+
+    <h2>内部插入/prepend</h2>
+    <pre><code id="jquery-api-prepend-js" class="javascript"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-prepend-js">
+$("p").prepend("&lt;a&gt;王二&lt;/a&gt;");</pre>
+    <pre><code id="jquery-api-prepend-html" class="html"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-prepend-html">
+&lt;p&gt;
+    &lt;a&gt;张三&lt;/a&gt;
+&lt;/p&gt;</pre>
+    <span>result</span>
+    <pre><code id="jquery-api-prepend-html-2" class="html"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-prepend-html-2">
+&lt;p&gt;
+    &lt;a&gt;王二&lt;/a&gt;
+    &lt;a&gt;张三&lt;/a&gt;
+&lt;/p&gt;</pre>
+</section>
+<section class="step slide">
+    <h1 class="h1-header">文档处理</h1>
+
+    <h2>外部插入/after</h2>
+    <pre><code id="jquery-api-after-js" class="javascript"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-after-js">
+$("p").after("&lt;p&gt;李四&lt;/p&gt;");</pre>
+    <pre><code id="jquery-api-after-html" class="html"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-after-html">
+&lt;p&gt;张三&lt;/p&gt;
+</pre>
+    <span>result</span>
+    <pre><code id="jquery-api-after-html-2" class="html"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-after-html-2">
+&lt;p&gt;张三&lt;/p&gt;&lt;p&gt;李四&lt;/p&gt;</pre>
+</section>
+<section id="dom" class="step slide">
+    <h1 class="h1-header">文档处理</h1>
+
+    <h2>外部插入/before</h2>
+    <pre><code id="jquery-api-before-js" class="javascript"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-before-js">
+$("p").before("&lt;p&gt;王二&lt;/p&gt;");</pre>
+    <pre><code id="jquery-api-before-html" class="html"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-before-html">
+&lt;p&gt;张三&lt;/p&gt;
+</pre>
+    <span>result</span>
+    <pre><code id="jquery-api-before-html-2" class="html"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-before-html-2">
+&lt;p&gt;王二&lt;/p&gt;&lt;p&gt;张三&lt;/p&gt;</pre>
+</section>
+<section id="dom-empty" class="step slide">
+    <h1 class="h1-header">文档处理</h1>
+
+    <h2>删除/empty</h2>
+    <pre><code id="jquery-api-empty-js" class="javascript"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-empty-js">
+$("p").empty();</pre>
+    <pre><code id="jquery-api-empty-html" class="html"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-empty-html">
+&lt;p&gt;还想再活五百年&lt;/p&gt;</pre>
+    <span>result</span>
+    <pre><code id="jquery-api-empty-html-2" class="html"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-empty-html-2">
+&lt;p&gt;&lt;/p&gt;</pre>
+</section>
+<section id="dom-remove" class="step slide">
+    <h1 class="h1-header">文档处理</h1>
+
+    <h2>删除/remove</h2>
+    <pre><code id="jquery-api-remove-js" class="javascript"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-remove-js">
+$("#you").remove();</pre>
+    <pre><code id="jquery-api-remove-html" class="html"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-remove-html">
+&lt;a id="you"&gt;you and&lt;/a&gt;&lt;a&gt;me&lt;/a&gt;</pre>
+    <span>result</span>
+    <pre><code id="jquery-api-remove-html-2" class="html"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-remove-html-2">
+&lt;a&gt;me&lt;/a&gt;</pre>
+</section>
+<section class="step slide">
+    <h1 class="h1-header">事件</h1>
+</section>
+<section class="step slide">
+    <h1 class="h1-header">动画</h1>
+</section>
+<section class="step slide">
+    <h1 class="h1-header">Ajax</h1>
+</section>
+<section class="step slide">
+    <h1 class="h1-header">链式调用</h1>
+</section>
+<section class="step slide">
+    <h1 class="h1-header">编码风格</h1>
+    <ul>
+        <li><span>jQuery对象用 "$xxx" 表示</span>
+            <pre><code id="jquery-guide-naming-jquery-object" class="javascript"></code></pre>
+            <pre class="hide" data-code-for="jquery-guide-naming-jquery-object">
+var str = "hello";
+var $button = $("#button");</pre>
+        </li>
+        <li><span>this 并不是 jQuery 对象</span>
+            <pre><code id="jquery-guide-this-reference" class="javascript"></code></pre>
+            <pre class="hide" data-code-for="jquery-guide-this-reference">
+$("#button").click(function(){
+    // this is not jQuery object
+    // $this is jQuery object
+    var $this = $(this);
+});</pre>
+        </li>
+    </ul>
+</section>
+<section class="step slide">
+    <h1 class="h1-header">名言警句</h1>
+
+    <h2 class="m-t-100">不看 API 的程序员不是好码农</h2>
+
+    <h3 class="m-t-100 t-a-r">—— 佚名</h3>
+</section>
+<section class="step slide">
+    <h1 class="t-a-c" style="margin-top:300px;">Thanks</h1>
+
+    <h1 class="t-a-c" style="font-size:180%;">完</h1>
+</section>
+</div>
+<div class="progress"><span></span></div>
+</div>
+<canvas id="myCanvas" width="1024" height="768">您的浏览器不支持HTML5,请升级或更换您的浏览器,强烈推荐您使用chrome浏览器。</canvas>
+<menu class="controls" id="slideCtrl">
+    <span class="tool home" onclick="location.hash='#cover'">!</span>
+    <span class="tool paint">p</span>
+    <span class="tool clearIt">d</span>
+</menu>
+<script type="text/javascript" src="../js/webslide.js"></script>
+<script type="text/javascript">
+    $(function () {
+        //将 pre 中的代码，放到 data-code-for 对应的 id 的元素中
+        $("pre[data-code-for]").each(function (ele) {
+            var $pre = $(this);
+            var id = $pre.attr("data-code-for");
+            $("#" + id).text($pre.text());
+        });
+
+        hljs.tabReplace = '    ';
+        hljs.initHighlightingOnLoad();
+    });
+</script>
+</body>
+</html>
