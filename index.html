@@ -571,7 +571,7 @@ $("#you").remove();</pre>
     <pre class="hide" data-code-for="jquery-api-remove-html-2">
 &lt;a&gt;me&lt;/a&gt;</pre>
 </section>
-<section id="events" class="step slide">
+<section id="events-category" class="step slide">
     <h1 class="h1-header">事件</h1>
 
     <h2>支持</h2>
@@ -581,6 +581,22 @@ $("#you").remove();</pre>
         <li>表单事件</li>
         <li>浏览器事件</li>
     </ul>
+</section>
+<section id="event-bind" class="step slide rebuild">
+    <h1 class="h1-header">绑定事件</h1>
+    <pre><code id="jquery-api-event-bind-js" class="javascript"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-event-bind-js">
+$("#button").click( function () {
+    alert("click me");
+});</pre>
+    <div class="m-t-30" data-build>
+        <span>bind</span>
+        <pre><code id="jquery-api-event-bind-js-2" class="javascript"></code></pre>
+    </div>
+    <pre class="hide" data-code-for="jquery-api-event-bind-js-2">
+$("#button").bind("click", function () {
+    alert("click me");
+});</pre>
 </section>
 <section class="step slide">
     <h1 class="h1-header">动画</h1>
