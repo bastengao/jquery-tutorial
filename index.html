@@ -581,22 +581,6 @@ $("#you").remove();</pre>
         <li>浏览器事件</li>
     </ul>
 </section>
-<section id="event-bind" class="step slide rebuild">
-    <h1 class="h1-header">绑定事件</h1>
-    <pre><code id="jquery-api-event-bind-js" class="javascript"></code></pre>
-    <pre class="hide" data-code-for="jquery-api-event-bind-js">
-$("#button").click( function () {
-    alert("click me");
-});</pre>
-    <div class="m-t-50" data-build>
-        <span>bind</span>
-        <pre><code id="jquery-api-event-bind-js-2" class="javascript"></code></pre>
-    </div>
-    <pre class="hide" data-code-for="jquery-api-event-bind-js-2">
-$("#button").bind("click", function () {
-    alert("click me");
-});</pre>
-</section>
 <section id="event-bind-event-type" class="step slide">
     <h1 class="h1-header">事件</h1>
     <ul style="width:220px;float:left;">
@@ -635,6 +619,35 @@ $("#button").bind("click", function () {
         <li>error</li>
     </ul>
     <div style="clear:both;"></div>
+</section>
+<section id="event-inline-bind" class="step slide rebuild">
+    <h1 class="h1-header">绑定事件</h1>
+
+    <span>click</span>
+    <pre><code id="jquery-api-event-bind-js" class="javascript"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-event-bind-js">
+$("#button").click( function () {
+    alert("click me");
+});</pre>
+
+    <div data-build>
+        <h2>bind</h2>
+        <pre><code id="jquery-api-event-bind-js-2" class="javascript"></code></pre>
+        <div class="t-a-r m-t-20">
+            <button id="jquery-api-event-bind-example-button" style="font-size:1.2em;" data-build>bind</button>
+            <script type="text/javascript">
+                $(function () {
+                    $("#jquery-api-event-bind-example-button").bind("click", function () {
+                        alert("click me (by bind )");
+                    });
+                });
+            </script>
+        </div>
+    </div>
+    <pre class="hide" data-code-for="jquery-api-event-bind-js-2">
+$("#button").bind("click", function () {
+    alert("click me (by bind )");
+});</pre>
 </section>
 <section class="step slide">
     <h1 class="h1-header">动画/效果</h1>
