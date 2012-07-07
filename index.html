@@ -688,9 +688,24 @@ $("button").click(function () {
     <h1 class="h1-header">一次性事件</h1>
 
     <h2>one</h2>
+    <pre><code id="jquery-api-event-one-js" class="javascript"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-event-one-js">
+$("#button").one("click", function () {
+    alert("good bye");
+});</pre>
+    <div class="t-a-r m-t-30">
+        <button id="jquery-api-event-on-example-button" style="font-size:1.2em;">one</button>
+        <script type="text/javascript">
+            $(function () {
+                $("#jquery-api-event-on-example-button").one("click", function () {
+                    alert("good bye");
+                });
+            });
+        </script>
+    </div>
 </section>
 <section id="event-on" class="step slide">
-    <h1 class="h1-header" style="margin-bottom: 10px;" >现在和将来</h1>
+    <h1 class="h1-header" style="margin-bottom: 10px;">现在和将来</h1>
 
     <h2>bind 只管现在</h2>
     <pre><code id="jquery-api-event-on-bind-js" class="javascript" style="font-size:0.9em;"></code></pre>
