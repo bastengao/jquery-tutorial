@@ -649,6 +649,36 @@ $("#button").bind("click", function () {
     alert("click me (by bind )");
 });</pre>
 </section>
+<section id="event-unbind" class="step slide">
+    <h1 class="h1-header">取消绑定</h1>
+
+    <h2>unbind</h2>
+    <pre><code id="jquery-api-unbind-js" class="javascript"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-unbind-js">
+$("input").focusout(function () {
+    alert("focus out");
+});
+
+$("button").click(function () {
+    $("input").unbind("foucsout");
+};</pre>
+
+    <div class="t-a-r m-t-20">
+        <input id="jquery-api-unbind-example-input" type="text">
+        <button id="jquery-api-unbind-example-button">unbind</button>
+        <script type="text/javascript">
+            $(function () {
+                $("#jquery-api-unbind-example-input").focusout(function () {
+                    alert("focus out");
+                });
+
+                $("#jquery-api-unbind-example-button").click(function () {
+                    $("#jquery-api-unbind-example-input").unbind("focusout");
+                });
+            });
+        </script>
+    </div>
+</section>
 <section class="step slide">
     <h1 class="h1-header">动画/效果</h1>
 </section>
