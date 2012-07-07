@@ -620,7 +620,7 @@ $("#you").remove();</pre>
     </ul>
     <div style="clear:both;"></div>
 </section>
-<section id="event-inline-bind" class="step slide rebuild">
+<section id="event-bind" class="step slide rebuild">
     <h1 class="h1-header">绑定事件</h1>
 
     <span>click</span>
@@ -678,6 +678,55 @@ $("button").click(function () {
             });
         </script>
     </div>
+</section>
+<section id="event-trigger" class="step slide">
+    <h1 class="h1-header">触发事件</h1>
+
+    <h2>trigger</h2>
+</section>
+<section id="event-one" class="step slide">
+    <h1 class="h1-header">一次性事件</h1>
+
+    <h2>one</h2>
+</section>
+<section id="event-on" class="step slide">
+    <h1 class="h1-header" style="margin-bottom: 10px;" >现在和将来</h1>
+
+    <h2>bind 只管现在</h2>
+    <pre><code id="jquery-api-event-on-bind-js" class="javascript" style="font-size:0.9em;"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-event-on-bind-js">
+$(".my-button").bind("click", function () {
+    alert("haha");
+});
+
+$("#add-button").click(function () {
+    var newButton = "&lt;button class='.my-button'&gt;new button&lt;/button&gt;";
+    $("#buttons).append(newButton);
+});</pre>
+    <pre><code id="jquery-api-event-on-bind-html" class="html"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-event-on-bind-html">
+&lt;div id="buttons"&gt;
+    &lt;button id="add-button"&gt;add button&lt;/button&gt;
+    &lt;button class="my-button"&gt;my button&lt;/button&gt;
+&lt;/div&gt;</pre>
+
+    <div id="jquery-api-event-on-bind-div">
+        <button id="jquery-api-event-on-example-add-button">add button</button>
+        <button class="jquery-api-event-on-bind-button">my button</button>
+        <script type="text/javascript">
+            $(function () {
+                $("#jquery-api-event-on-example-add-button").click(function () {
+                    $("#jquery-api-event-on-bind-div").append("<button class='jquery-api-event-on-bind-button'>new button</button>");
+                });
+                $(".jquery-api-event-on-bind-button").click(function () {
+                    alert("haha");
+                });
+            });
+        </script>
+    </div>
+    <p>bind 只是给当前页面中匹配的元素绑定事件, 但是我们的页面内容可能会变化. 如果我们加新的元素, 新的元素的事件是不会被绑定.</p>
+
+    <h2>on 可以穿越未来</h2>
 </section>
 <section class="step slide">
     <h1 class="h1-header">动画/效果</h1>
