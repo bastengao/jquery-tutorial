@@ -746,7 +746,7 @@ $("#add-btn").click(function () {
     <h1 class="h1-header" style="margin-bottom: 10px;">现在和将来</h1>
 
     <h2>on 可以穿越未来</h2>
-    <pre><code id="jquery-api-event-on-js" class="javascript"></code></pre>
+    <pre><code id="jquery-api-event-on-js" class="javascript" style="font-size:1.2em;line-height: 1.2em;"></code></pre>
     <pre class="hide" data-code-for="jquery-api-event-on-js">
 $("#buttons").on("click", ".my-btn", function () {
     alert("haha");
@@ -772,6 +772,16 @@ $("#buttons").on("click", ".my-btn", function () {
             });
         </script>
     </div>
+</section>
+<section id="event-off" class="step slide">
+    <h1 class="h1-header">取消 on 事件绑定</h1>
+
+    <h2>off</h2>
+    <pre><code id="jquery-api-event-off-js" class="javascript" style="font-size:1.2em;line-height: 1.2em;"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-event-off-js">
+$("#buttons").off("click", ".my-btn", function () {
+    alert("haha");
+});</pre>
 </section>
 <section class="step slide">
     <h1 class="h1-header">动画/效果</h1>
