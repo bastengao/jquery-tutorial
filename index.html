@@ -704,33 +704,33 @@ $("#button").one("click", function () {
         </script>
     </div>
 </section>
-<section id="event-on" class="step slide">
+<section id="event-on-bind" class="step slide">
     <h1 class="h1-header" style="margin-bottom: 10px;">现在和将来</h1>
 
     <h2>bind 只管现在</h2>
     <pre><code id="jquery-api-event-on-bind-js" class="javascript" style="font-size:0.9em;"></code></pre>
     <pre class="hide" data-code-for="jquery-api-event-on-bind-js">
-$(".my-button").bind("click", function () {
+$(".my-btn").bind("click", function () {
     alert("haha");
 });
 
-$("#add-button").click(function () {
-    var newButton = "&lt;button class='.my-button'&gt;new button&lt;/button&gt;";
-    $("#buttons).append(newButton);
+$("#add-btn").click(function () {
+    var newBtn = "&lt;button class='.my-btn'&gt;new button&lt;/button&gt;";
+    $("#buttons").append(newBtn);
 });</pre>
-    <pre><code id="jquery-api-event-on-bind-html" class="html"></code></pre>
+    <pre><code id="jquery-api-event-on-bind-html" class="html" style="font-size:0.9em;"></code></pre>
     <pre class="hide" data-code-for="jquery-api-event-on-bind-html">
 &lt;div id="buttons"&gt;
-    &lt;button id="add-button"&gt;add button&lt;/button&gt;
-    &lt;button class="my-button"&gt;my button&lt;/button&gt;
+    &lt;button id="add-btn"&gt;add button&lt;/button&gt;
+    &lt;button class="my-btn"&gt;my button&lt;/button&gt;
 &lt;/div&gt;</pre>
 
     <div id="jquery-api-event-on-bind-div">
-        <button id="jquery-api-event-on-example-add-button">add button</button>
+        <button id="jquery-api-event-on-bind-example-add-button">add button</button>
         <button class="jquery-api-event-on-bind-button">my button</button>
         <script type="text/javascript">
             $(function () {
-                $("#jquery-api-event-on-example-add-button").click(function () {
+                $("#jquery-api-event-on-bind-example-add-button").click(function () {
                     $("#jquery-api-event-on-bind-div").append("<button class='jquery-api-event-on-bind-button'>new button</button>");
                 });
                 $(".jquery-api-event-on-bind-button").click(function () {
@@ -739,9 +739,39 @@ $("#add-button").click(function () {
             });
         </script>
     </div>
-    <p>bind 只是给当前页面中匹配的元素绑定事件, 但是我们的页面内容可能会变化. 如果我们加新的元素, 新的元素的事件是不会被绑定.</p>
+    <p class="hide">bind 只是给当前页面中匹配的元素绑定事件, 但是我们的页面内容可能会变化. 如果我们加了新的元素, 新的元素的事件是不会被绑定.</p>
+
+</section>
+<section id="event-on" class="step slide">
+    <h1 class="h1-header" style="margin-bottom: 10px;">现在和将来</h1>
 
     <h2>on 可以穿越未来</h2>
+    <pre><code id="jquery-api-event-on-js" class="javascript"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-event-on-js">
+$("#buttons").on("click", ".my-btn", function () {
+    alert("haha");
+});</pre>
+    <pre><code id="jquery-api-event-on-html" class="html"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-event-on-html">
+&lt;div id="buttons"&gt;
+    &lt;button id="add-btn"&gt;add button&lt;/button&gt;
+    &lt;button class="my-btn"&gt;my button&lt;/button&gt;
+&lt;/div&gt;</pre>
+
+    <div id="jquery-api-event-on-div">
+        <button id="jquery-api-event-on-example-add-button">add button</button>
+        <button class="jquery-api-event-on-button">my button</button>
+        <script type="text/javascript">
+            $(function () {
+                $("#jquery-api-event-on-example-add-button").click(function () {
+                    $("#jquery-api-event-on-div").append("<button class='jquery-api-event-on-button'>new button</button>");
+                });
+                $("#jquery-api-event-on-div").on("click",".jquery-api-event-on-button", function () {
+                    alert("haha");
+                });
+            });
+        </script>
+    </div>
 </section>
 <section class="step slide">
     <h1 class="h1-header">动画/效果</h1>
