@@ -814,8 +814,53 @@ $("#buttons").off("click", ".my-btn", function () {
     alert("haha");
 });</pre>
 </section>
-<section class="step slide">
+<section id="effects" class="step slide">
     <h1 class="h1-header">动画/效果</h1>
+
+    <div>
+        <div id="jquery-example-effects-toggle">
+            <span>show / hide</span>
+            <button>toggle</button>
+            <pre><code id="jquery-api-example-effects-toggle-js" class="javascript"></code></pre>
+        </div>
+            <pre class="hide" data-code-for="jquery-api-example-effects-toggle-js">
+$("button").click(function () {
+    $("pre").toggle();
+});</pre>
+        <div id="jquery-example-effects-fade-toggle">
+            <span>fadeIn / fadeOut</span>
+            <button>fade toggle</button>
+            <pre class="hide"><code id="jquery-example-effects-fade-toggle-js" class="javascript"></code></pre>
+        </div>
+        <pre class="hide" data-code-for="jquery-example-effects-fade-toggle-js">
+$("button").click(function () {
+    $("pre").fadeToggle();
+});</pre>
+        <div id="jquery-example-effects-slide-toggle">
+            <span>slideUp / slideDown</span>
+            <button>slide toggle</button>
+            <pre class="hide"><code id="jquery-example-effects-slide-toggle-js" class="javascript"></code></pre>
+        </div>
+        <pre class="hide" data-code-for="jquery-example-effects-slide-toggle-js">
+$("button").click(function () {
+    $("pre").slideToggle();
+});</pre>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $("#jquery-example-effects-toggle button").click(function () {
+                $(this).siblings("pre").toggle();
+            });
+
+            $("#jquery-example-effects-fade-toggle button").click(function () {
+                $(this).siblings("pre").fadeToggle('slow');
+            });
+
+            $("#jquery-example-effects-slide-toggle button").click(function () {
+                $(this).siblings("pre").slideToggle('slow');
+            });
+        });
+    </script>
 </section>
 <section class="step slide">
     <h1 class="h1-header">Ajax</h1>
