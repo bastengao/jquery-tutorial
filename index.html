@@ -681,8 +681,39 @@ $("button").click(function () {
 </section>
 <section id="event-trigger" class="step slide">
     <h1 class="h1-header">触发事件</h1>
+    <pre><code id="jquery-api-trigger-js" class="javascript"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-trigger-js">
+$("p").click(function() {
+    alert($(this).text());
+});</pre>
 
+    <h2>click</h2>
+    <pre><code id="jquery-api-trigger-js-2" class="javascript"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-trigger-js-2">
+$("p").click();</pre>
     <h2>trigger</h2>
+    <pre><code id="jquery-api-trigger-js-3" class="javascript"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-trigger-js-3">
+$("p").trigger("click");</pre>
+    <p id="jquery-api-trigger-example-p">喜欢加班的程序员不好程序员</p>
+    <button id="jquery-api-trigger-example-click">click</button>
+    <button id="jquery-api-trigger-example-trigger">trigger</button>
+    <script type="text/javascript">
+        $(function () {
+            var $p = $("#jquery-api-trigger-example-p");
+            $p.click(function () {
+                alert($(this).text());
+            });
+
+            $("#jquery-api-trigger-example-click").click(function () {
+                $p.click();
+            });
+
+            $("#jquery-api-trigger-example-trigger").click(function () {
+                $p.trigger("click");
+            });
+        });
+    </script>
 </section>
 <section id="event-one" class="step slide">
     <h1 class="h1-header">一次性事件</h1>
@@ -766,7 +797,7 @@ $("#buttons").on("click", ".my-btn", function () {
                 $("#jquery-api-event-on-example-add-button").click(function () {
                     $("#jquery-api-event-on-div").append("<button class='jquery-api-event-on-button'>new button</button>");
                 });
-                $("#jquery-api-event-on-div").on("click",".jquery-api-event-on-button", function () {
+                $("#jquery-api-event-on-div").on("click", ".jquery-api-event-on-button", function () {
                     alert("haha");
                 });
             });
