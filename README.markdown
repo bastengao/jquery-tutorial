@@ -1,2 +1,2 @@
-this is a jquery [tutorial](http://bastengao.github.com/jquery-tutorial/) in chinese.
+jquery [简易教程](http://bastengao.github.com/jquery-tutorial/)
 =====================================
