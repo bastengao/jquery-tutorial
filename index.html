@@ -954,8 +954,24 @@ $.get("api/fetchUser", {userId : '5201314'}, function(user) {
     console.log("i am back");
 });</pre>
 </section>
-<section class="step slide">
-    <h1 class="h1-header">链式调用</h1>
+<section id="fluent-interface" class="step slide">
+    <h1 class="h1-header">链式调用/fluent interface</h1>
+
+    <pre><code id="jquery-api-fluent-interface-html" class="html"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-fluent-interface-html">
+&lt;div id="person"&gt;
+    &lt;a&gt;bastengao&lt;a/&gt;
+    &lt;em&gt;Basten Gao&lt;/em&gt;
+&lt;/div&gt;</pre>
+    <pre><code id="jquery-api-fluent-interface-js" class="javascript"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-fluent-interface-js">
+$("#person").css("color", "#ccc")
+   .find("a")
+        .addClass("highlighted")
+   .end()
+   .find("em")
+        .css("color", "red")
+   .end();</pre>
 </section>
 <section class="step slide">
     <h1 class="h1-header">编码风格</h1>
