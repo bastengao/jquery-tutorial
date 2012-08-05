@@ -862,6 +862,36 @@ $("button").click(function () {
         });
     </script>
 </section>
+<section id="effects-animate" class="step slide">
+    <h1 class="h1-header">动画/效果</h1>
+
+    <h2>animate</h2>
+    <pre><code id="jquery-api-effects-animate-js" class="javascript"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-effects-animate-js">
+$("button.big").click(function () {
+    $("p").animate({"font-size" : "300%"});
+});
+
+$("button.small").click(function () {
+    $("p").animate({"font-size" : "100%"});
+}); </pre>
+
+    <button id="jquery-example-effects-animate-big">大</button>
+    <button id="jquery-example-effects-animate-small">小</button>
+    <p id="jquery-example-effects-animate-p">hello world</p>
+    <script type="text/javascript">
+        $(function () {
+           var $p =  $("#jquery-example-effects-animate-p");
+            $("#jquery-example-effects-animate-big").click(function () {
+                $p.animate({"fontSize": "300%"});
+            });
+
+            $("#jquery-example-effects-animate-small").click(function () {
+                $p.animate({"fontSize": "100%"});
+            });
+        });
+    </script>
+</section>
 <section class="step slide">
     <h1 class="h1-header">Ajax</h1>
 </section>
