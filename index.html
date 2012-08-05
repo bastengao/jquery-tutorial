@@ -911,6 +911,26 @@ $.ajax({
     }
 });</pre>
 </section>
+<section id="ajax-post" class="step slide">
+    <h1 class="h1-header">Ajax</h1>
+
+    <h2>post</h2>
+    <pre><code id="jquery-api-ajax-post-js" class="javascript"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-ajax-post-js">
+$.post("api/fetchUser", {userId : '5201314'}, function(user) {
+    console.log("i am back");
+});</pre>
+</section>
+<section id="ajax-get" class="step slide">
+    <h1 class="h1-header">Ajax</h1>
+
+    <h2>get</h2>
+    <pre><code id="jquery-api-ajax-get-js" class="javascript"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-ajax-get-js">
+$.get("api/fetchUser", {userId : '5201314'}, function(user) {
+    console.log("i am back");
+});</pre>
+</section>
 <section class="step slide">
     <h1 class="h1-header">链式调用</h1>
 </section>
