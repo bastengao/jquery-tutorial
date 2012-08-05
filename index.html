@@ -892,8 +892,24 @@ $("button.small").click(function () {
         });
     </script>
 </section>
-<section class="step slide">
+<section id="ajax-ajax" class="step slide">
     <h1 class="h1-header">Ajax</h1>
+
+    <h2>ajax</h2>
+    <pre><code id="jquery-api-ajax-ajax-js" class="javascript"></code></pre>
+    <pre class="hide" data-code-for="jquery-api-ajax-ajax-js">
+$.ajax({
+    url : "",
+    type : "POST",
+    data : {userId : '5201314'},
+    dataType : "json",
+    success : function(user) {
+        console.log("i am back");
+    },
+    error : function(){
+        console.log("sorry, something is broken");
+    }
+});</pre>
 </section>
 <section class="step slide">
     <h1 class="h1-header">链式调用</h1>
